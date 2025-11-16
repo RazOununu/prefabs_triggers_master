@@ -2,6 +2,7 @@
 
 ## How to Play
 
+- First - Click on the game screen.
 - Move the spaceship using the **arrow keys** (Up, Down, Left, Right).
 - Hold the **Space** key to shoot continuously.
 - Avoid enemy objects entering from **above**.
