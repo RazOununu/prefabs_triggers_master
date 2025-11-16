@@ -88,3 +88,5 @@ Reading the movement vector (`moveDirection.x`) every frame and updating the spr
 
 ---
 
+**itch.io link:** [Play the game](https://raz-oununu.itch.io/prefabs-triggers-master)
+
