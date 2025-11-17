@@ -8,19 +8,23 @@ using UnityEngine;
 
 //1. Remove- [RequireComponent(typeof(TextMeshPro))] --> for TextMeshPro, not for UI
 //2. change from TextMeshPro to TMP_Text
-public class NumberField : MonoBehaviour {
+public class NumberField : MonoBehaviour
+{
     private int number;
 
-    public int GetNumber() {
+    public int GetNumber()
+    {
         return this.number;
     }
 
-    public void SetNumber(int newNumber) {
+    public void SetNumber(int newNumber)
+    {
         this.number = newNumber;
         GetComponent<TMP_Text>().text = newNumber.ToString();
     }
 
-    public void AddNumber(int toAdd) {
+    public void AddNumber(int toAdd)
+    {
         SetNumber(this.number + toAdd);
     }
 }

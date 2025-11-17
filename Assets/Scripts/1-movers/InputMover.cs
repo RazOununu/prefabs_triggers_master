@@ -4,42 +4,48 @@ using UnityEngine.InputSystem;
 /**
  * This component moves its object when the player clicks the arrow keys.
  */
-public class InputMover: MonoBehaviour {
+public class InputMover : MonoBehaviour
+{
     [Tooltip("Speed of movement, in meters per second")]
     [SerializeField] float speed = 10f;
 
-    [SerializeField] InputAction move = new InputAction(
+    [SerializeField]
+    InputAction move = new InputAction(
         type: InputActionType.Value, expectedControlType: nameof(Vector2));
 
     //1.
     private SpriteRenderer s;
-    private Color originalColor; 
+    private Color originalColor;
 
-    void OnEnable()  {
+    void OnEnable()
+    {
         move.Enable();
     }
 
-    void OnDisable()  {
+    void OnDisable()
+    {
         move.Disable();
     }
 
-    void Start(){
+    void Start()
+    {
         //2.
         s = GetComponent<SpriteRenderer>();
         originalColor = s.color;
     }
 
 
-    void Update() {
+    void Update()
+    {
         Vector2 moveDirection = move.ReadValue<Vector2>();
         //3.
         //color = component, Color = class
-        if(moveDirection.x > 0)
+        if (moveDirection.x > 0)
             s.color = Color.red;
-        else if(moveDirection.x < 0)
+        else if (moveDirection.x < 0)
             s.color = Color.green;
         else
-            s.color = originalColor;        
+            s.color = originalColor;
 
         Vector3 movementVector = new Vector3(moveDirection.x, moveDirection.y, 0) * speed * Time.deltaTime;
         transform.position += movementVector;
